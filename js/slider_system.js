@@ -1,7 +1,7 @@
-const slider = document.getElementById("slider");
+
+export const slider = document.getElementById("slider");
 const cards = document.querySelectorAll("#slider .card");
 const _wrapper_slider = document.getElementById("wrapper-slider");
-
 let idSlider;
 
 _wrapper_slider.addEventListener("scroll", () => {;
