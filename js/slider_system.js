@@ -6,7 +6,7 @@ let idSlider;
 
 _wrapper_slider.addEventListener("scroll", () => {;
   clearTimeout(idSlider);
-console.log("koko")
+
   idSlider = setTimeout(() => {
     const centerSlider =
       _wrapper_slider.scrollLeft + _wrapper_slider.clientWidth / 2;

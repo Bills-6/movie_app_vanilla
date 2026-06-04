@@ -22,17 +22,17 @@ const fetchData = fetch("https://api.themoviedb.org/3/trending/movie/day?api_key
 							<img class="movie-image w-full h-full bg-blue-100 rounded-2xl brightness-50" src="${pathPoster}" alt="movie">
 
 							<div class="movie-info absolute flex items-center gap-3 px-6 z-4 bottom-11 w-full">
-								<span class="movie-date text-gray-400 text-sm">2022</span>
+								<span class="movie-date text-gray-400 text-sm">${movie.release_date}</span>
 
 								<div class="movie-category flex items-center gap-2 rounded-md">
 									<div class="icon w-4 h-4 bg-gray-400 rounded-sm flex items-center justify-center">
 										<i class="bi bi-film text-[8px] text-gray-600"></i>
 									</div>
-									<span class="category-title text-gray-400 text-sm">Movie</span>
+									<span class="category-title text-gray-400 text-sm">${movie.media_type}</span>
 								</div>
 							</div>
 
-							<h3 class="movie-title absolute bottom-3 px-6 text-2xl font-bold text-white font-mono">Title</h3>
+							<h3 class="movie-title absolute bottom-3 px-6 text-2xl font-bold text-white font-mono">${movie.title}</h3>
 						</article>
 			`;
 		});
