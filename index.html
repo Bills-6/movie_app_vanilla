@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Movie project</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body class="h-screen overflow-hidden">
+	<div class="container-movies bg-gray-900 h-full flex">
+		<aside class="bg-gradient-to-br shrink-0 from-gray-900 to-gray-800 w-14 h-screen rounded-md flex flex-col items-center justify-between py-5 text-gray-300">
+			<button class="w-10 h-10 cursor-pointer hover:scale-[1.1] group" id="movie-tab" data-focus="false">
+				<i class="bi bi-film text-2xl"></i>
+			</button>
+			<div class="p-1 bg-purple-500"></div>
+			<button class="w-10 h-10 cursor-pointer hover:brightness-75 transition all duration-200" id="profil-button">
+			<img class="block w-full h-full bg-blue-100 rounded-[500%]" src="./image/mentahan cukurukuk stiker.jpeg" alt="profil-user" />
+			</button>
+		</aside>
+		<main class="p-1 grow bg-gray-900 p-10 py-8 min-w-0">
+			<!-- search -->
+			<div class="search-movie-container mb-10 bg-gray-950/50 h-10 rounded-md relative flex gap-4">
+				<input class="block grow h-full bg-transparent text-gray-500 px-6 ps-10" placeholder="Search for Movies" type="text" />
+
+				<i class="icon-search bi bi-search absolute pointer-events-none text-gray-500 z-2 block left-0 top-1/2 -translate-y-1/2 ms-4"></i>
+
+				<button class="bg-gray-400 px-4 h-fit py-1 text-white rounded-md my-auto text-sm cursor-pointer hover:bg-blue-300/90 transition duration-200" id="search-btn" type="submit">Search</button>
+			</div>
+
+			<!-- Trending Section -->
+			<section class="py-5 overflow-hidden" id="trending-page">
+				<header class="title-page-container mb-5">
+					<div class="title-layout flex items-center gap-4">
+						<h2 class="text-white text-3xl">Trending</h2>
+
+						<div class="category-page border border-white px-2 py-1 rounded-[30px] text-white text-xs mt-auto">Movies</div>
+					</div>
+				</header>
+
+				<div class="trending-content-container overflow-x-scroll" id="wrapper-slider">
+					<ul class="flex items-center gap-5 p-4" id="slider">
+						<article class="movie-card w-[500px] h-[300px] shrink-0 rounded-2xl relative shadow-md shadow-gray-700 cursor-pointer hover:scale-[1.02] transition-all duration-200]">
+							<img class="movie-image w-full h-full bg-blue-100 rounded-2xl brightness-50" src="./image/mentahan cukurukuk stiker.jpeg" alt="movie">
+
+							<div class="movie-info absolute flex items-center gap-3 px-6 z-4 bottom-11 w-full">
+								<span class="movie-date text-gray-400 text-sm">2022</span>
+
+								<div class="movie-category flex items-center gap-2 rounded-md">
+									<div class="icon w-4 h-4 bg-gray-400 rounded-sm flex items-center justify-center">
+										<i class="bi bi-film text-[8px] text-gray-600"></i>
+									</div>
+									<span class="category-title text-gray-400 text-sm">Movie</span>
+								</div>
+							</div>
+
+							<h3 class="movie-title absolute bottom-3 px-6 text-2xl font-bold text-white font-mono">Title</h3>
+						</article>
+					</ul>
+				</div>
+			</section>
+		</main>
+	</div>
+
+</div>
+	<!-- my script -->
+	<script type="module" src="./js/interactive.js"></script>
+	<script type="module" src="./js/slider_system.js"></script>
+	<script type="module" src="./js/data_movie.js"></script>
+</body>
+</html>
