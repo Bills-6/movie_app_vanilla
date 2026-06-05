@@ -1,3 +1,18 @@
 .trending-content-container::-webkit-scrollbar, .main::-webkit-scrollbar {
 	display: none;
 }
+
+.loading-emoji {
+	animation-name: loading_state;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+@keyframes loading_state {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
