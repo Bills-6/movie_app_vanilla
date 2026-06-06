@@ -21,18 +21,18 @@
 		</aside>
 		<main class="main grow bg-zinc-900 px-3 py-8 min-w-0 overflow-y-scroll overflow-x-hidden">
 			<!-- search -->
-			<div class="search-movie-container mb-5 bg-gray-950/50 h-[50px] lg:h-12 rounded-md relative flex gap-1">
-				<input class="block grow h-full bg-transparent text-gray-500 px-4 md:ps-12 shrink-3 focus:outline-blue-400" placeholder="Search for Movies" type="text" />
+			<from class="search-movie-container mb-5 bg-gray-950/50 h-[50px] lg:h-12 rounded-md relative flex gap-1" id="form-search">
+				<input class="block grow h-full bg-transparent text-gray-500 px-4 md:ps-12 shrink-3 focus:outline-blue-400" placeholder="Search for Movies" type="text" id="input-search" />
 
 				<i class="icon-search bi bi-search absolute hidden md:block pointer-events-none text-gray-500 z-2 block left-0 top-1/2 -translate-y-1/2 ms-4"></i>
 
 				<button class="bg-zinc-600 px-4 h-full py-3 text-white rounded-md my-auto text-sm cursor-pointer hover:bg-blue-300/90 transition duration-200" id="search-btn" type="submit">
 					<i class="bi bi-search"></i>
 				</button>
-			</div>
+			</from>
 
 			<!-- Trending Section -->
-			<section class="py-5 overflow-hidden hidden" id="trending-page">
+			<section class="py-5 oveflow-hidden hidden" id="trending-page">
 				<header class="title-page-container mb-5">
 					<div class="title-layout flex items-center gap-4">
 						<h2 class="text-white text-2xl md:text-3xl">Trending</h2>
@@ -64,11 +64,30 @@
 			<!-- loading UI -->
 			<div class="loading-center w-full h-full flex hidden" data-state="false" id="loading-state">
 				<div class="loading-container p-5 flex items-center gap-2 m-auto">
-					<p class="loading-text text-4xl text-white font-bold">Loading....</p>
-					<span class="loading-emoji text-4xl">😵</span>
+					<p class="loading-text text-4xl text-white font-bold">Searching movies....</p>
+					<span class="loading-emoji text-4xl">⏳</span>
 				</div>
 			</div>
 
+			<!-- results search UI -->
+			<section class="w-full h-full lg:px-6" id="result-seaarch-UI">
+				<header class="mb-4">
+					<button class="flex items-center gap-2 px-4 ps-0 py-2 mb-3 rounded-sm" id="back-button">
+						<i class="bi bi-arrow-left text-white md:text-2xl"></i>
+						<span class="text-white font-semibold md:text-2xl">Back</span>
+					</button>
+
+					<p class="text-zinc-400 md:text-xl" id="search-results">Search found for ""</p>
+				</header>
+
+				<ul class="search-content bg-blue-400 flex flex-col" id="search-content">
+					<article class="search-result-card bg-orange-400 md:flex items-center">
+						<img class="w-full h-[200px] mb-5 md:mb-0 bg-pink-500 rounded-md md:w-[250px] lg:w-1/3 h-[300px]" src="" alt="image-">
+						<div class="result-info bg-gray-400 h-10 md:grow"></div>
+					</article>
+				</ul>
+
+			</section>
 		</main>
 	</div>
 
