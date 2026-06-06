@@ -25,9 +25,15 @@ async function SearchVideo(query) {
 		const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&leanguage=en-US`, options);
 
 		const json = await response.json();
-		
+		const data_search = json.results;
+
+		if (data_search.length === 0) {
+			throw new Error("not found");
+			return;
+		}
+
 	} catch (error) {
-		console.log();
+		console.log(error);
 	} finally {
 		loading_state_UI.dataset.state = "false";
 		
