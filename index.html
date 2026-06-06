@@ -9,8 +9,8 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body class="h-screen overflow-hidden">
-	<div class="container-movies bg-zinc-900 h-full flex ps-4">
-		<aside class="bg-gradient-to-br shrink-0 from-gray-900 to-gray-800 w-14 h-[95vh] my-auto rounded-md flex flex-col items-center justify-between py-10 text-gray-300">
+	<div class="container-movies bg-zinc-900 h-full flex md:ps-4">
+		<aside class="bg-gradient-to-br shrink-0 hidden from-gray-900 to-gray-800 w-14 h-[95vh] my-auto rounded-md md:flex flex-col items-center justify-between py-10 text-gray-300">
 			<button class="w-10 h-10 cursor-pointer hover:scale-[1.1] group" id="movie-tab" data-focus="true">
 				<i class="bi bi-film text-2xl"></i>
 			</button>
@@ -21,7 +21,7 @@
 		</aside>
 		<main class="main grow bg-zinc-900 px-3 py-8 min-w-0 overflow-y-scroll overflow-x-hidden">
 			<!-- search -->
-			<from class="search-movie-container mb-5 bg-gray-950/50 h-[50px] lg:h-12 rounded-md relative flex gap-1" id="form-search">
+			<form class="search-movie-container mb-5 bg-gray-950/50 h-[50px] lg:h-12 rounded-md relative flex gap-1" id="form-search">
 				<input class="block grow h-full bg-transparent text-gray-500 px-4 md:ps-12 shrink-3 focus:outline-blue-400" placeholder="Search for Movies" type="text" id="input-search" />
 
 				<i class="icon-search bi bi-search absolute hidden md:block pointer-events-none text-gray-500 z-2 block left-0 top-1/2 -translate-y-1/2 ms-4"></i>
@@ -29,10 +29,10 @@
 				<button class="bg-zinc-600 px-4 h-full py-3 text-white rounded-md my-auto text-sm cursor-pointer hover:bg-blue-300/90 transition duration-200" id="search-btn" type="submit">
 					<i class="bi bi-search"></i>
 				</button>
-			</from>
+			</form>
 
 			<!-- Trending Section -->
-			<section class="py-5 oveflow-hidden hidden" id="trending-page">
+			<section class="py-5 oveflow-hidden" id="trending-page">
 				<header class="title-page-container mb-5">
 					<div class="title-layout flex items-center gap-4">
 						<h2 class="text-white text-2xl md:text-3xl">Trending</h2>
@@ -43,14 +43,14 @@
 
 				<div class="trending-content-container overflow-x-scroll" id="wrapper-slider">
 					
-					<ul class="relative z-50 flex items-center gap-10 p-4" id="slider">
+					<div class="relative z-50 flex items-center gap-10 p-4" id="slider">
 						
-					</ul>
+					</div>
 				</div>
 			</section>
 
 			<!-- recommended section -->
-			<section class="py-5 overflow-hidden hidden" id="recommended-movie">
+			<section class="py-5 overflow-hidden" id="recommended-movie">
 				<header class="title-page-container mb-5">
 						<h3 class="text-white text-2xl md:text-3xl">Recomemended for you</h3>
 				</header>
@@ -70,7 +70,7 @@
 			</div>
 
 			<!-- results search UI -->
-			<section class="w-full h-full lg:px-6" id="result-seaarch-UI">
+			<section class="w-full h-full lg:px-6 hidden" id="result-seaarch-UI">
 				<header class="mb-4">
 					<button class="flex items-center gap-2 px-4 ps-0 py-2 mb-3 rounded-sm" id="back-button">
 						<i class="bi bi-arrow-left text-white md:text-2xl"></i>
@@ -80,12 +80,12 @@
 					<p class="text-zinc-400 md:text-xl" id="search-results">Search found for ""</p>
 				</header>
 
-				<ul class="search-content bg-blue-400 flex flex-col" id="search-content">
+				<div class="search-content bg-blue-400 flex flex-col" id="search-content">
 					<article class="search-result-card bg-orange-400 md:flex items-center">
-						<img class="w-full h-[200px] mb-5 md:mb-0 bg-pink-500 rounded-md md:w-[250px] lg:w-1/3 h-[300px]" src="" alt="image-">
+						<img class="w-full h-[200px] mb-5 md:mb-0 bg-pink-500 rounded-md md:w-[250px] lg:w-1/3 lg:h-[300px]" src="" alt="image-">
 						<div class="result-info bg-gray-400 h-10 md:grow"></div>
 					</article>
-				</ul>
+				</div>
 
 			</section>
 		</main>
@@ -96,5 +96,6 @@
 	<script type="module" src="./js/slider_system.js"></script>
 	<script type="module" src="./js/trending_data.js"></script>
 	<script type="module" src="./js/recommended_data.js"></script>
+	<script type="module" src="./js/search.js"></script>
 </body>
 </html>

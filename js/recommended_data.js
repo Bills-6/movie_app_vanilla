@@ -17,7 +17,7 @@ async function getTv() {
 
     const responseObject = await response.json();
     const videos = responseObject.results;
-    console.log(videos);
+    // console.log(videos);
     cards_container.innerHTML = null;
 
     Array.from(videos).forEach(video => {
